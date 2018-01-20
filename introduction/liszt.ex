@@ -1,8 +1,6 @@
 defmodule Liszt do
   def nth(0, [head|_]) do head end
-  def nth(n, [_|tail]) do
-    nth(n - 1, tail)
-  end
+  def nth(n, [_|tail]) do nth(n - 1, tail) end
 
   def len(l) do len(l, 0) end
   def len([], c) do c end
