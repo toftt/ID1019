@@ -8,8 +8,11 @@ defmodule Huffman do
     freq(char_list)
   end
 
-  def freq(sample), do: Enum.reduce sample, %{}, fn(char, acc) ->
-    Map.update(acc, char, 1, &(&1 + 1))
+  def freq(sample) do
+    map = Enum.reduce sample, %{}, fn(char, acc) ->
+      Map.update(acc, char, 1, &(&1 + 1))
+    end
+    Map.to_list(map)
   end
 
 end
